@@ -15,7 +15,12 @@ def compute_accurace(a,b,eps):
 
 
 g = Graph()
-g.read_from_mat(sys.argv[1])
+filename = sys.argv[1]
+if( filnename[-3:] == 'mat'):
+	g.read_from_mat(filename)
+else:
+	g.read_from_txt(filename)
+
 
 ds = DetermininsticSolver(g)
 ds.solve()
