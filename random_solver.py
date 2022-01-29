@@ -13,7 +13,7 @@ class RandomSolver:
 		self.solution = [-1 for i in range(0,self.graph.vertices)]
 		self.time = 0.0
 		self.eps = eps
-		self.k = c*int(math.log(self.graph.vertices)/self.eps)
+		self.k = c*(int(math.log(self.graph.vertices)/self.eps) + 1)
 		self.index = min(self.k - round(self.k/math.e),self.k-1)
 
 	def solve(self):
