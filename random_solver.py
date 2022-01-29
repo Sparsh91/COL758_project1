@@ -3,7 +3,8 @@ import time
 import sys
 import math
 import numpy as np 
-
+#k = c(log(n))/eps
+c = 10
 class RandomSolver:
 
 	def __init__(self,g,eps=0.01):
@@ -12,7 +13,7 @@ class RandomSolver:
 		self.solution = [-1 for i in range(0,self.graph.vertices)]
 		self.time = 0.0
 		self.eps = eps
-		self.k = int(math.log(self.graph.vertices)/self.eps) + 1
+		self.k = c*int(math.log(self.graph.vertices)/self.eps)
 		self.index = min(self.k - round(self.k/math.e),self.k-1)
 
 	def solve(self):
@@ -61,7 +62,7 @@ class RandomSolver:
 		self.solution = [-1 for i in range(0,self.graph.vertices)]
 		self.time = 0.0
 		self.eps = eps
-		self.k = int(math.log(self.graph.vertices)/self.eps) + 1
+		self.k = c*int(math.log(self.graph.vertices)/self.eps) + 1
 		self.index = min(self.k - round(self.k/math.e),self.k-1)
 
 
