@@ -16,7 +16,7 @@ def compute_accurace(a,b,eps):
 
 g = Graph()
 filename = sys.argv[1]
-if( filnename[-3:] == 'mat'):
+if( filename[-3:] == 'mat'):
 	g.read_from_mat(filename)
 else:
 	g.read_from_txt(filename)
