@@ -71,7 +71,7 @@ for eps in [0.1,0.05,0.001]:
 	em.change_eps(eps)
 	em.solve()
 	
-	a = compute_accurace(ds.solution, em.solution, em.eps)
+	a = compute_accurace(ds.solution, em.solution, math.sqrt(em.eps))
 	b = compute_std(ds.solution, em.solution, math.sqrt(em.eps))
 	
 	print("for mean estimator")
