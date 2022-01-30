@@ -28,7 +28,7 @@ time_random_1 = []
 time_random_2 = []
 time_random_3 = []
 n=15
-while(n<=800):
+while(n<=1000):
 		G(int(n),p)
 		numbers.append(int(n))
 		n = n*1.15
@@ -51,7 +51,7 @@ while(n<=800):
 			if(i==2):
 					time_random_3.append(rs.time)
 					accuracy_random_3.append(a)
-			#print("hua",i)
+			print("hua",i)
 import matplotlib.pyplot as plt
 plt.plot(numbers,accuracy_random_1, label = "eps = 0.1")
 plt.plot(numbers,accuracy_random_2, label = "eps = 0.05")
