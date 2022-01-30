@@ -3,6 +3,7 @@ from random_solver import RandomSolver
 from deterministic_solver import DetermininsticSolver
 from estimator_mean import EstimatorMean
 import sys
+import math
 
 def compute_accurace(a,b,eps):
 	# print(a)
@@ -46,7 +47,7 @@ for eps in [0.1]:
 	rs.solve()
   
 	
-	a = compute_accurace(ds.solution, rs.solution, rs.eps)
+	a = compute_accurace(ds.solution, rs.solution, math.sqrt(rs.eps))
 	print("for randomised estimator")
 	print("for eps = "+ str(eps))
 	print("time = "+str(rs.time))
