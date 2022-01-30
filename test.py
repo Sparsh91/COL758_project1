@@ -3,6 +3,7 @@ from random_solver import RandomSolver
 from deterministic_solver import DetermininsticSolver
 from estimator_mean import EstimatorMean
 import sys
+import math
 
 def compute_accurace(a,b,eps):
 	# print(a)
