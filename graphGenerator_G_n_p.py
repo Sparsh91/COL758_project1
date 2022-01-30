@@ -7,16 +7,23 @@ import sys
 """
 def G(n,p):
     edges = []
+    file1 = open("g1.txt", "w")
     for i in range(n):
-        for j in range(i+1,n):
+        for j in range(n):
+            if(i==j):
+                continue
             has_an_edge = np.random.binomial(1,p)
             if(has_an_edge):
                 edges.append((i,j))
-    print(n)
-    print(len(edges))
+    file1.write(str(n))
+    file1.write('\n')
+    file1.writelines(str(len(edges)))
+    file1.write('\n')
     for i in edges:
-        print(i[0],i[1])
-
-n = int(sys.argv[1])
-p = float(sys.argv[2])
-G(n,p)
+        file1.writelines(str(i[0])+" "+str(i[1]))
+        file1.write('\n')
+    file1.close()
+    return
+# n = int(sys.argv[1])
+# p = float(sys.argv[2])
+# G(n,p)

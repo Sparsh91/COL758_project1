@@ -12,7 +12,7 @@ class EstimatorMean:
 		self.solution = [-1 for i in range(0,self.graph.vertices)]
 		self.time = 0.0
 		self.eps = eps
-		self.k = 10 * (int(math.log(self.graph.vertices)/self.eps) + 1)
+		self.k = 1 * (int(math.log(self.graph.vertices)/self.eps) + 1)
 # 		self.index = min(self.k - round(self.k/math.e),self.k-1)
 
 	def solve(self):
@@ -49,7 +49,6 @@ class EstimatorMean:
 
 		#time to find soltion using mean
 		for v in range(0,self.graph.vertices):
-			(guess_tracker[v]).sort()
 			self.solution[v] = round(self.k/sum(guess_tracker[v]))
 
 		#done
