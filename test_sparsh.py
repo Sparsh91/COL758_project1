@@ -15,10 +15,10 @@ def compute_accurace(a,b,eps):
 			s = s + 1
 	return (s/len(a))*100
 
-def compute_variance(a,b,eps):
+def compute_std(a,b,eps):
 	ans = 0
 	for i in range(0,len(a)):
-		ans += ans + (a[i]-b[i])*(a[i]-b[i])
+		ans += (a[i]-b[i])*(a[i]-b[i])
 	
 	return math.sqrt(ans/len(a))
 
@@ -55,7 +55,7 @@ for eps in [0.1,0.05,0.001]:
   
 	
 	a = compute_accurace(ds.solution, rs.solution, math.sqrt(rs.eps))
-	b = compute_variance(ds.solution, rs.solution, math.sqrt(rs.eps))
+	b = compute_std(ds.solution, rs.solution, math.sqrt(rs.eps))
 	
 	print("for randomised estimator")
 	print("for eps = "+ str(eps))
@@ -71,7 +71,7 @@ for eps in [0.1,0.05,0.001]:
 	em.solve()
 	
 	a = compute_accurace(ds.solution, em.solution, em.eps)
-	b = compute_variance(ds.solution, rs.solution, math.sqrt(rs.eps))
+	b = compute_std(ds.solution, em.solution, math.sqrt(em.eps))
 	
 	print("for mean estimator")
 	print("for eps = "+ str(eps))
