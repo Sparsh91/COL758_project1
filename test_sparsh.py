@@ -17,10 +17,11 @@ def compute_accurace(a,b,eps):
 
 def compute_std(a,b,eps):
 	ans = 0
+	n = len(a)
 	for i in range(0,len(a)):
-		ans += (a[i]-b[i])*(a[i]-b[i])
+		ans += (a[i]-b[i])*(a[i]-b[i])/n
 	
-	return math.sqrt(ans/len(a))
+	return math.sqrt(ans)
 
 
 g = Graph()
