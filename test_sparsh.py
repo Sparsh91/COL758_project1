@@ -24,7 +24,7 @@ else:
 	g.read_from_txt(filename)
   
 for i in range(20):
-    print(i,g.adj_list[i])
+	print(i,g.adj_list[i])
 
 
 ds = DetermininsticSolver(g)
@@ -36,7 +36,7 @@ print("time = "+ str(ds.time))
 print("-------------")
 
 for i in range(20):
-    print(i,ds.solution[i])
+	print(i,ds.solution[i])
 
 
 rs = RandomSolver(g,0.1)
@@ -53,8 +53,8 @@ for eps in [0.1]:
 	print("time = "+str(rs.time))
 	print("accuracy = "+ str(a))
 	print("-------------")
-  for i in range(20):
-    print(i,rs.solution[i])
+	for i in range(20):
+		print(i,rs.solution[i])
 
   
 	em.change_eps(eps)
@@ -67,6 +67,6 @@ for eps in [0.1]:
 	print("accuracy = "+ str(a))
 	print("-------------")
 	
-  for i in range(20):
-    print(i,em.solution[i])
+	for i in range(20):
+		print(i,em.solution[i])
 	
