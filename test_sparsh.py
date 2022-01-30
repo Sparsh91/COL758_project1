@@ -42,7 +42,7 @@ for i in range(20):
 rs = RandomSolver(g,0.1)
 em = EstimatorMean(g,0.1)
 
-for eps in [0.1]:
+for eps in [0.1,0.05,0.01]:
 	rs.change_eps(eps)
 	rs.solve()
   
