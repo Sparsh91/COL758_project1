@@ -32,25 +32,15 @@ print("time = "+ str(ds.time))
 print("-------------")
 
 rs = RandomSolver(g,0.1)
-em = EstimatorMean(g,0.1)
 
 for eps in [0.1,0.05,0.001]:
 	rs.change_eps(eps)
 	rs.solve()
-	em.change_eps(eps)
-	em.solve()
 	
-	a = compute_accurace(ds.solution, rs.solution, rs.eps)
+	a = compute_accurace(ds.solution, rs.solution, math.sqrt(rs.eps))
 	print("for randomised estimator")
 	print("for eps = "+ str(eps))
 	print("time = "+str(rs.time))
-	print("accuracy = "+ str(a))
-	print("-------------")
-	
-	a = compute_accurace(ds.solution, em.solution, em.eps)
-	print("for mean estimator")
-	print("for eps = "+ str(eps))
-	print("time = "+str(em.time))
 	print("accuracy = "+ str(a))
 	print("-------------")
 	
