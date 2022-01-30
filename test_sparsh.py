@@ -15,6 +15,13 @@ def compute_accurace(a,b,eps):
 			s = s + 1
 	return (s/len(a))*100
 
+def compute_variance(a,b,eps):
+	ans = 0
+	for i in range(0,len(a)):
+		ans += ans + (a[i]-b[i])*(a[i]-b[i])
+	
+	return math.sqrt(ans/len(a))
+
 
 g = Graph()
 filename = sys.argv[1]
@@ -48,10 +55,13 @@ for eps in [0.1,0.05,0.001]:
   
 	
 	a = compute_accurace(ds.solution, rs.solution, math.sqrt(rs.eps))
+	b = compute_variance(ds.solution, rs.solution, math.sqrt(rs.eps))
+	
 	print("for randomised estimator")
 	print("for eps = "+ str(eps))
 	print("time = "+str(rs.time))
 	print("accuracy = "+ str(a))
+	print("variance = "+ str(b))
 	print("-------------")
 	for i in range(20):
 		print(i,rs.solution[i])
@@ -61,10 +71,13 @@ for eps in [0.1,0.05,0.001]:
 	em.solve()
 	
 	a = compute_accurace(ds.solution, em.solution, em.eps)
+	b = compute_variance(ds.solution, rs.solution, math.sqrt(rs.eps))
+	
 	print("for mean estimator")
 	print("for eps = "+ str(eps))
 	print("time = "+str(em.time))
 	print("accuracy = "+ str(a))
+	print("variance = "+ str(b))
 	print("-------------")
 	
 	for i in range(20):
