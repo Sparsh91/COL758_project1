@@ -50,7 +50,7 @@ class EstimatorMean:
 		#time to find soltion using mean
 		for v in range(0,self.graph.vertices):
 			(guess_tracker[v]).sort()
-			self.solution[v] = round(self.k/sum(guess_tracker[v]))
+			self.solution[v] = math.floor(self.k/sum(guess_tracker[v]))
 
 		#done
 		end_time = time.time()
