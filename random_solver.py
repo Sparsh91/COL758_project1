@@ -51,7 +51,7 @@ class RandomSolver:
 		#time to find soltion
 		for v in range(0,self.graph.vertices):
 			(guess_tracker[v]).sort()
-			self.solution[v] = round(1/guess_tracker[v][self.index])
+			self.solution[v] = math.floor(1/guess_tracker[v][self.index])
 
 		#done
 		end_time = time.time()
