@@ -50,7 +50,13 @@ class Graph:
 			for j in self.adj_list[i]:
 				g.adj_list[j].append(i)
 		return g
-
+		
+	def linear_graph(self,n):
+		self.vertices = n
+		self.edges = n-1
+		self.adj_list = [[] for i in range(0,n)]
+		for i in range(0,n-1):
+			(self.adj_list[i]).append(i+1)
 
 # g = Graph()
 # g.read_from_mat(sys.argv[1])
