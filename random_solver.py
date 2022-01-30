@@ -4,7 +4,7 @@ import sys
 import math
 import numpy as np 
 #k = c(log(n))/eps
-c = 10
+c = 1
 class RandomSolver:
 
 	def __init__(self,g,eps=0.01):
